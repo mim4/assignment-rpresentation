@@ -146,7 +146,8 @@ type: slide
 
 <iframe src="carat.html" style="display:block;position:absolute;height:100%;width:100%"></iframe>
 
-***
+
+
 
 
 Plots of the data
@@ -154,5 +155,12 @@ Plots of the data
 type: slide
 
 
-<iframe src="demo2.html" style="position:absolute;height:100%;width:100%"></iframe>
+
+<iframe src="depth.html" style="display:block;position:absolute;height:100%;width:100%"></iframe>
+
+Analysis and conclusions of the data 
+========================================================
+type: slide2
+
+We have obtained that Color F and Clarity VVS1 and VVS2 are the characteristics that make a diamond more expensive. Also, we have seen that the more carats we have, the more expensive a diamond is per carat. We have also seen a couple of plots where we could see the price of the carat vs carat in relationship with clarity, and another plot where we could see the Depth vs Total price in relationship with color.
 

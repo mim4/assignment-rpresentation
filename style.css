@@ -41,4 +41,18 @@ body {
   font-size: 26pt;
 }
 
+.slide2 .reveal .state-background {
+    background-image: url("diamondsbackground.png");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: cover;
+    background-color: white;
+}
+.slide2 .reveal p{
+  color: black;
+  text-align: justify;
+  font-size: 34pt;
+}
+
 

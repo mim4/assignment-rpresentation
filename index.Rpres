@@ -84,22 +84,32 @@ Plots of the data
 type: slide
 
 ```{r echo=FALSE}
-carat=plot_ly(Diamonds, x = ~Carat, y = ~PricePerCt, color = ~Carat,
+carat=plot_ly(Diamonds, x = ~Carat, y = ~PricePerCt, color = ~Clarity,
     size = ~Carat, text = ~paste("Clarity: ", Clarity ))
 htmlwidgets::saveWidget(carat,'carat.html')
 ```
 
 <iframe src="carat.html" style="display:block;position:absolute;height:100%;width:100%"></iframe>
 
-***
+
+
 
 
 Plots of the data
 ========================================================
 type: slide
-```{r message=FALSE, warning=FALSE, include=FALSE}
 
+```{r echo=FALSE}
+depth=plot_ly(Diamonds, x = ~Depth, y = ~TotalPrice, color = ~Color,
+    size = ~Depth, text = ~paste("Color: ", Color ))
+htmlwidgets::saveWidget(depth,'depth.html')
 ```
 
-<iframe src="demo2.html" style="position:absolute;height:100%;width:100%"></iframe>
+<iframe src="depth.html" style="display:block;position:absolute;height:100%;width:100%"></iframe>
+
+Analysis and conclusions of the data 
+========================================================
+type: slide2
+
+We have obtained that Color F and Clarity VVS1 and VVS2 are the characteristics that make a diamond more expensive. Also, we have seen that the more carats we have, the more expensive a diamond is per carat. We have also seen a couple of plots where we could see the price of the carat vs carat in relationship with clarity, and another plot where we could see the Depth vs Total price in relationship with color.
 
