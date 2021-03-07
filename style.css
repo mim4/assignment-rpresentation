@@ -1,0 +1,44 @@
+body {
+    overflow: scroll;
+}
+.section .reveal .state-background {
+    background-image: url("diamondsbackground.png");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: cover;
+    background-color: white;
+}
+.section .reveal p {
+  color: black;
+  text-align: center;
+  font-size: 55pt;
+  text-decoration: underline;
+}
+.section .reveal div {
+  text-align: center;
+  font-size: 28pt;
+  color: black;
+}
+
+
+.slide .reveal .state-background {
+    background-image: url("diamondsbackground.png");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: cover;
+    background-color: white;
+}
+.slide .reveal div{
+  color: black;
+  text-align:center;
+  
+}
+.slide .reveal p{
+  color: black;
+  text-align: justify;
+  font-size: 26pt;
+}
+
+

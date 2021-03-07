@@ -1,0 +1,105 @@
+========================================================
+font-import: https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap
+font-family: 'Kanit'
+css: style.css
+<br>
+<p>
+HTML PRESENTATION: DIAMONDS DATAFRAME
+</p>
+<div>
+Marta Ilundain Martínez
+</div>
+
+Diamonds DataFrame
+========================================================
+type: slide
+<p>
+In this presentation we will make an analysis of the dataset Diamonds, from the Stat2Data package.
+<br>
+<br>
+This dataframe contains 351 observations. The variables we have in this dataset are:
+</p>
+
+<div style="float: left; margin-left: 2cm; text-align:justify;">
+<li class="fragment fade-in">Carat: numeric variable, corresponds to the size of the diamond (in carats, one carat is equivalent to 200mg)</li>
+<li class="fragment fade-in">Color: coded as D (most white/bright) through J</li>
+<li class="fragment fade-in">Clarity: coded as IF, VVS1, VVS2, VS1, VS2, SI1, SI2, or SI3</li>
+<li class="fragment fade-in">Depth: depth (as a percentage of diameter)</li>
+<li class="fragment fade-in">PricePerCt: price per carat</li>
+<li class="fragment fade-in">TotalPrice: price for the diamond (in dollars)</li>
+</div>
+
+
+
+
+Summary of the variables
+========================================================
+type: slide
+
+Next, we have two tables, the first one contains the summary of the numerical variables and the second one the summary of the categorical variables: 
+
+```{r echo=FALSE}
+library(Stat2Data)
+library(kableExtra)
+data("Diamonds")
+sum_num = t(as.matrix(summary(Diamonds[,c(1,4,5,6)])))
+kable(sum_num) %>%
+  kable_styling(position = "center")
+sum_fact = t(as.matrix(summary(Diamonds[,-c(1,4,5,6)])))
+kable(sum_fact) %>%
+  kable_styling(position = "center")
+```
+
+
+
+Plots of the data
+========================================================
+type: slide
+
+In the next three slides we will see some plots of our data. First, with ggplot we can see the main characteristics of the Diamonds dataset:
+
+```{r echo=FALSE, fig.align='center', out.width='100%'}
+require(ggpubr)
+library(ggplot2)
+library(plotly)
+library(tidyverse)
+library(htmlwidgets)
+g1 = ggplot(Diamonds, aes(x = Color, y = TotalPrice))+
+  geom_bar(
+    aes(fill = Clarity), stat = "identity", color = "white",
+    position = position_dodge(0.9)
+    )+ theme_bw()
+
+g2 = ggplot(Diamonds, aes( x= Carat, y= PricePerCt)) +
+      geom_point(shape=18, color="chartreuse3", size = 3) + theme_bw() +
+      geom_smooth(method=lm, linetype="dashed",
+                  color="black", fill="blue")
+
+ggarrange(g1,g2, ncol= 1, nrow=2)
+```
+
+
+Plots of the data
+========================================================
+type: slide
+
+```{r echo=FALSE}
+carat=plot_ly(Diamonds, x = ~Carat, y = ~PricePerCt, color = ~Carat,
+    size = ~Carat, text = ~paste("Clarity: ", Clarity ))
+htmlwidgets::saveWidget(carat,'carat.html')
+```
+
+<iframe src="carat.html" style="display:block;position:absolute;height:100%;width:100%"></iframe>
+
+***
+
+
+Plots of the data
+========================================================
+type: slide
+```{r message=FALSE, warning=FALSE, include=FALSE}
+
+```
+
+<iframe src="demo2.html" style="position:absolute;height:100%;width:100%"></iframe>
+
